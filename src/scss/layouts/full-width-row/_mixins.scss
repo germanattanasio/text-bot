@@ -1,0 +1,16 @@
+@mixin full-width-row {
+  padding: get('rhythm') * 2 0rem;
+  margin-top: 0rem;
+
+  @include breakpoint(get('large')) {
+    &--aside {
+      @include grid(2);
+      min-height: 1rem;
+    }
+    &--main {
+      @include grid(10, $has-right-gutter: false);
+      margin-top: 0rem;
+      min-height: 1rem;
+    }
+  }
+}

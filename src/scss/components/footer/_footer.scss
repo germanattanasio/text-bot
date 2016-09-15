@@ -1,0 +1,46 @@
+.footer {
+  background-color: color('gray', 80);
+  .base--h2 {
+    color: color('purple', 20);
+    font-weight: 300;
+  }
+  .base--h3 {
+    color: color('white', 10);
+  }
+
+  &--icon {
+    min-width: 6rem;
+    width: 80%;
+  }
+
+  &--nav {
+    margin-top: get('rhythm');
+  }
+
+  &--nav-ul.base--ul_inline .base--li {
+    display: block;
+    margin-bottom: get('rhythm') / 8;
+
+    @include breakpoint($breakpoint-nav-items) {
+      margin-right: get('rhythm') / 2;
+      margin-bottom: 0rem;
+      display: inline-block;
+    }
+  }
+
+  &--nav-link {
+    color: color('purple', 20);
+    border-color: color('purple', 20);
+
+    &:visited {
+      color: color('purple', 20);
+      border-color: color('purple', 20);
+    }
+
+    &:hover,
+    &:focus {
+      color: lighten(color('purple', 20), 10%);
+      border-color: lighten(color('purple', 20), 10%);
+    }
+  }
+}

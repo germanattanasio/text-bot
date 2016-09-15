@@ -1,0 +1,407 @@
+// Confess! (http://i.imgur.com/7TlTREn.png)
+//
+// Whether you're writing something quick and dirty or you're hacking something
+// to work, the shame file is a convenient way to stage your style changes.
+//
+// While the shame file is very useful, most importantly, do not forget to clean up and refactor
+// code that's left in here.
+//
+// Write your shameful code below:
+
+
+header h1.base--h1 a {
+	text-indent: 0;
+	background: none;
+}
+.base--h1-icon {
+	width: 2.5rem;
+    vertical-align: middle;
+    margin-right: 1em;
+    margin-top: -0.6em;
+}
+.base--a {
+	color: inherit;	
+	border-bottom: none;
+}
+.main-page {
+	width: 40%;
+	margin: 4em 30% 0;
+	white-space: nowrap;
+}
+.query-input {
+	border: 0;
+    border-bottom: 0.0625rem solid;
+    max-width: 100%;
+}
+.h2-margin {
+	margin-top: 1em;
+}
+.location {
+	float: right;
+	margin-right: 1em;	
+}
+.location-text {
+	border-bottom: 0.0625rem solid;
+}
+.chat-button {
+	padding: .5em 7em;	
+}
+.center-me {
+    text-align: center;
+    margin: 6em 0;
+}
+.footer-row {
+	margin-top: 0;
+}
+.conversationSection {
+	padding: 0;
+}
+
+@media (min-width: 1140px) {
+  	.base--ul, .base--ol {
+	  	width: 100%;
+	  	text-align: center;
+  	}
+}
+.base--h2 {
+	color: inherit;	
+}
+.base--input:focus {
+	outline: none;
+}
+
+
+
+
+//////////////////////////////  Imported from app.css   /////////////////////////////
+$color-from-user: #ECF0F2;
+$color-watson-user: #F2EEEE;
+$color-fixed-column: #855ca7;
+
+.responsive-columns-wrapper {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -ms-display: flex;
+  -ms-flex-direction: row;
+  height: 100%;
+}
+
+.responsive-column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: auto;
+  text-align: center;
+}
+
+.chat-column {
+  height: 100%;
+  padding: 0 0 0.625rem 0;
+  margin: auto;
+  text-align: left;
+  max-width: 40rem;
+  min-width: 9.375rem;
+}
+
+.scrollingChat {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 10rem);
+  padding: 0.625rem;
+}
+
+.message-inner {
+  opacity: 0;
+  margin-top: 0.9375rem;
+  -webkit-transition-property: opacity, margin-top;
+  -webkit-transition-duration: 0.75s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-property: opacity, margin-top;
+  -moz-transition-duration: 0.75s;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-property: opacity, margin-top;
+  -o-transition-duration: 0.75s;
+  -o-transition-timing-function: ease-in;
+  -ms-transition-property: opacity, margin-top;
+  -ms-transition-duration: 0.75s;
+  -ms-transition-timing-function: ease-in;
+  transition-property: opacity, margin-top;
+  transition-duration: 0.75s;
+  transition-timing-function: ease-in;
+}
+
+.load .message-inner {
+  opacity: 1;
+  margin-top: 0.3125rem;
+}
+
+.from-user {
+  text-align: right;
+}
+
+.from-user .message-inner {
+  font-size: 1rem;
+  color: color('gray', 80);
+  letter-spacing: 0.015rem;
+  line-height: 1.3125rem;
+  background: $color-from-user;
+  border-radius: 0.55rem;
+  text-align: left;
+  display: inline-block;
+  min-width: 6rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.from-user .message-inner p {
+  padding: 1.5rem;
+}
+
+.from-user .message-inner:before, .from-user .message-inner:after {
+  content: "";
+  position: absolute;
+}
+
+
+.from-user .message-inner:before {
+  	border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid $color-from-user;
+    margin: -0.9375rem 1.5rem 0 0;
+    float: right;
+    position: relative;
+}
+
+.from-user .message-inner:after {
+  z-index: -1;
+  bottom: -0.5rem;
+  right: 0;
+  height: 0.5rem;
+  width: 0.5rem;
+  background: color('white', 10);
+  border-top-right-radius: 1.25rem;
+}
+
+.from-watson .message-inner {
+  font-size: 1rem;
+  color: color('gray', 80);
+  letter-spacing: 0.015rem;
+  line-height: 1.3125rem;
+  background: $color-watson-user;
+  border-radius: 0.55rem;
+  text-align: left;
+  display: inline-block;
+  min-width: 6rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.from-watson.latest .message-inner {
+  color: color('gray', 80);
+}
+
+.from-watson .message-inner:before {
+  	border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid $color-watson-user;
+    margin: -0.9375rem 0 0 1.5rem;
+}
+
+.from-watson p {
+  padding: 1.5rem;
+}
+
+.from-watson.latest.top p:before {
+  content: ".";
+  color: #9855D4;
+  background-size: 0.3125rem 1.3125rem;
+  position: absolute;
+  z-index: 2;
+  width: 0.3125rem;
+  height: 1.3125rem;
+  line-height: 1.3125rem;
+}
+
+.from-user .summary, .from-watson .summary {
+	font-family: 'Inconsolata', monospace;
+	font-size: 0.8125rem;
+	color: color('gray', 40);
+}
+.from-user .summary {
+    margin: 0 2.1875rem 1.125rem 0;
+    background: url("../images/dot-orange.svg") right no-repeat;
+    padding-right: 1.5rem;
+    background-size: 0.625rem;
+}
+
+.from-watson .summary {
+    margin: 0 0 1.125rem 2.1875rem;
+    background: url("../images/dot-purple.svg") left no-repeat;
+    padding-left: 1.5rem;
+    background-size: 0.625rem;
+}
+
+.highlights {
+	text-align: left;
+	font-size: 0.9375rem;
+	margin-top: 1.5rem;
+}
+
+.hyperlink {
+	color: inherit !important;
+    border-bottom: 0.0625rem solid !important;
+}
+.tech-highlights {
+	margin-top: 0.5rem !important;
+}
+
+::-webkit-input-placeholder {
+  color: color('gray', 60);
+}
+
+::-moz-placeholder {
+  color: color('gray', 60);
+  opacity:  1;
+}
+
+input:-moz-placeholder {
+  color: color('gray', 60);
+  opacity:  1;
+}
+
+:-ms-input-placeholder {
+  color: color('gray', 60);
+}
+
+::-ms-clear {
+  display: none;
+}
+
+input[type=text]:focus {
+	border-color: inherit;	
+}
+
+.inputOutline {
+  display: block;
+  border-bottom: 0.0625rem solid color('gray', 30);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1.375rem;
+}
+
+.textInputDummy {
+  position:absolute;
+  white-space:pre;
+  top: 0;
+  left: -1000%;
+  opacity: 0;
+}
+
+.fixed-column {
+  font-family: Monaco, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.125rem;
+  background-color: $color-fixed-column;
+  color: color('white', 10);
+  overflow-x: auto;
+  margin-top: 0;
+
+  width: 45%;
+  max-width: 28rem;
+  min-width: 27rem;
+}
+
+.fixed-column.full {
+  width: 100%;
+  max-width: none;
+  min-width: initial;
+}
+
+.fixed-column .header-text, .fixed-column .payload-initial-message {
+  font-family: Helvetica Neue for IBM, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.01875rem;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  margin-top: 0;
+}
+
+.icons {
+	width: 0.9375rem;
+    vertical-align: bottom;
+    margin-right: 1.25rem;
+}
+
+.hide {
+  display: none;
+}
+
+.payload .line-numbers, .payload .payload-text {
+  padding: 0.5rem;
+}
+
+.segments {
+  margin-top: 1.5rem;	
+}
+
+.drawer-title .close-drawer {
+	margin-top: 1.5625rem !important;
+}
+
+.footer {
+	padding: 0 0 0.625rem 0;
+    margin-top: -4rem;
+    background-color: inherit;
+	width: 61%;
+	font-size: 0.875rem;
+}
+.channel-header {
+	margin-bottom: 3.125rem;	
+}	
+pre {
+  margin: 0;
+  word-wrap: normal;
+}
+
+html{
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 0.9375rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 0.875rem;
+  }
+
+  .chat-column {
+    /*padding-top: 4rem;*/
+  }
+  
+  .responsive-column {
+	width: 50%;
+  }
+
+  .fixed-column {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+  }
+  .footer {
+ 	position: absolute;
+ 	bottom: -352px;
+ 	width: 100%;
+  }
+  .payload-initial-message {
+ 	padding: 3rem;	
+  }
+}

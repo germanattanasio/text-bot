@@ -1,0 +1,26 @@
+{
+  "name": "ui-component-library",
+  "description": "Watson UI Component Library",
+  "main": "gulpfile.js",
+  "authors": [
+    "James Zhang <james.zhang75024@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "pattern",
+    "library",
+    "sass",
+    "components",
+    "ui",
+    "bootstrap"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "watson-developer-cloud-components": "^0.1.0"
+  }
+}

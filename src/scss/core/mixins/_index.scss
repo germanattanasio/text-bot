@@ -1,0 +1,6 @@
+@mixin two-thirds-main-body {
+  @include breakpoint(get('small')) {
+    @include grid(8);
+    @include reset-float;
+  }
+}

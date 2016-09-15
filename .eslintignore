@@ -1,0 +1,7 @@
+node_modules
+gulp
+src/bower_components
+coverage
+src/js/vendors
+lib
+public/js/demo.js

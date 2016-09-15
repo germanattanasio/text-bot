@@ -1,0 +1,5 @@
+@import 'extends';
+
+.base--input {
+  @extend %fixed-width-input;
+}

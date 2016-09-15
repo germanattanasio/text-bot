@@ -1,0 +1,11 @@
+@import 'icon-fonts';
+
+.icon {
+  vertical-align: middle;
+  font-size: 1em;
+  color: inherit;
+
+  &:before {
+    vertical-align: middle;
+  }
+}

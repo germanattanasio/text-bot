@@ -1,0 +1,92 @@
+{
+  "name": "text-bot",
+  "version": "0.1.2",
+  "description": "Weather bot that uses the IBM Watson Conversation service, AlchemyLanguage, and the Weather Channel API.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "gulp",
+    "postinstall": "node_modules/.bin/bower install",
+    "start": "node server.js",
+    "test-unit": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/unit",
+    "test-integration": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/integration",
+    "test-casper": "casperjs test ./test/test.webui.js",
+    "test-casper-runner": "NODE_ENV=test node casper-runner.js",
+    "test": "npm run lint && npm run test-unit && npm run test-integration && npm run test-casper-runner",
+    "lint": "eslint .",
+    "autofix": "eslint --fix .",
+    "validate": "npm ls"
+  },
+  "author": "IBM Corp.",
+  "dependencies": {
+    "bluebird": "^3.4.3",
+    "body-parser": "^1.15.1",
+    "botkit": "^0.2.2",
+    "botkit-sms": "^1.0.7",
+    "bower": "^1.7.9",
+    "cf-deployment-tracker-client": "^0.1.1",
+    "cloudant": "^1.4.2",
+    "debug": "^2.2.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "express-rate-limit": "^2.4.0",
+    "extend": "^3.0.0",
+    "helmet": "^2.1.2",
+    "object.pick": "^1.1.2",
+    "request": "^2.72.0",
+    "string-template": "^1.0.0",
+    "use-strict": "^1.0.1",
+    "uuid": "^2.0.2",
+    "watson-developer-cloud": "^2.1.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "casperjs": "^1.1.1",
+    "eslint": "^3.3.1",
+    "graceful-fs": "^4.1.6",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-iconfont": "^1.0.0",
+    "gulp-iconfont-css": "0.0.9",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "istanbul": "^0.4.3",
+    "mocha": "^3.0.2",
+    "phantomjs-prebuilt": "^2.1.12",
+    "run-sequence": "^1.2.2",
+    "supertest": "^2.0.0",
+    "wrench": "^1.5.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watson-developer-cloud/text-bot.git"
+  },
+  "engines": {
+    "node": ">= 4.x",
+    "npm": ">= 3.x"
+  },
+  "contributors": [
+    {
+      "name": "Steven Oh",
+      "email": "ohs@us.ibm.com"
+    },
+    {
+      "name": "Andrew Ayres",
+      "email": "afayres@us.ibm.com"
+    },
+    {
+      "name": "Eva Xiaohui Luo",
+      "email": "evaluo_xhl@us.ibm.com"
+    },
+    {
+      "name": "German Attanasio Ruiz",
+      "email": "germanatt@us.ibm.com"
+    }
+  ],
+  "license": "Apache-2.0"
+}

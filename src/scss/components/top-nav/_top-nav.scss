@@ -1,0 +1,494 @@
+@media (min-width: 1140px) {
+  /* line 85, /home/vcap/app/public-site-src/documents/css/_common.scss */
+  .wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    } }
+
+/* line 3, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.drawer {
+  display: none;
+  box-shadow: none;
+  overflow-y: scroll;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 1);
+  height: 100%;
+  width: 400px;
+  z-index: 99999; }
+  @media screen and (max-width: 45em) {
+    /* line 3, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+    .drawer {
+      width: 100%; } }
+  /* line 19, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .drawer:active, .drawer:focus {
+    outline: none;
+    transition: transform 0.3s cubic-bezier(0.5, 0.8, 0, 1), box-shadow 800ms cubic-bezier(0, 0, 0, 0.5) 300ms; }
+  /* line 24, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .drawer a {
+    color: #fdfdfd;
+    text-decoration: none;
+    border-bottom: 0 none;
+    text-transform: uppercase;
+    font-weight: 700; }
+    /* line 30, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+    .drawer a:hover {
+      color: #d7aaff; }
+  /* line 34, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .drawer .nav-title {
+    font-weight: 200;
+    font-size: 1.5em;
+    color: #d7aaff;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block; }
+
+/* line 43, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.mobile-main-nav {
+  padding: 1.5em; }
+  /* line 45, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .mobile-main-nav > li {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #5a5a5a; }
+
+/* line 52, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.services-mobile-nav a {
+  color: #fdfdfd;
+  font-weight: 400;
+  text-transform: none; }
+  /* line 56, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .services-mobile-nav a:hover {
+    color: #d7aaff; }
+
+/* line 61, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.drawer-container {
+  position: absolute;
+  width: 400px;
+  z-index: 9999;
+  background-color: #323232; }
+  @media screen and (max-width: 45em) {
+    /* line 61, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+    .drawer-container {
+      width: 100%; } }
+
+/* line 71, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.close {
+  position: relative;
+  transition-delay: .2s;
+  display: none; }
+
+/* line 77, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.open {
+  position: absolute;
+  display: block;
+  transform: translateX(0%); }
+  /* line 84, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .open .activity-list li {
+    opacity: 1;
+    transform: translateX(0); }
+  /* line 90, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .open .drawer-nav img {
+    opacity: 1;
+    transform: translate(0, 0); }
+
+/* line 96, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.drawer-title {
+  height: 72px;
+  line-height: 72px;
+  position: relative;
+  user-select: none; }
+  /* line 101, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .drawer-title h3 {
+    color: #fdfdfd;
+    padding-left: 1.5em;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 72px;
+    margin: 0; }
+  /* line 109, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+  .drawer-title .close-drawer {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 60px;
+    border-bottom: 0 none; }
+    /* line 116, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+    .drawer-title .close-drawer img {
+      width: 15px; }
+
+/* line 123, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.tab img {
+  transition-delay: .5s; }
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes close_bottom_bar {
+  0% {
+    transform: rotate(-45deg); }
+  50% {
+    transform: translateY(-6px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes close_top_bar {
+  0% {
+    transform: rotate(45deg); }
+  50% {
+    transform: translateY(6px); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes active_bottom_bar {
+  0% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translateY(-6px) translateX(0); }
+  100% {
+    transform: rotate(-45deg); } }
+
+@keyframes active_top_bar {
+  0% {
+    transform: translate(0, 0); }
+  50% {
+    transform: translateY(6px) translateX(0); }
+  100% {
+    transform: rotate(45deg); } }
+
+/* line 201, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.nav-drawer-toggler.active .svg-menu-toggle .bar:nth-of-type(1) {
+  animation: active_top_bar;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; }
+
+/* line 207, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.nav-drawer-toggler.active .svg-menu-toggle .bar:nth-of-type(2) {
+  opacity: 0; }
+
+/* line 211, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.nav-drawer-toggler.active .svg-menu-toggle .bar:nth-of-type(3) {
+  animation: active_bottom_bar;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; }
+
+/* line 219, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.nav-drawer-toggler.close .svg-menu-toggle .bar:nth-of-type(1) {
+  animation: close_top_bar;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; }
+
+/* line 225, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.nav-drawer-toggler.close .svg-menu-toggle .bar:nth-of-type(2) {
+  opacity: 1; }
+
+/* line 229, /home/vcap/app/public-site-src/documents/css/_sidenav.scss */
+.nav-drawer-toggler.close .svg-menu-toggle .bar:nth-of-type(3) {
+  animation: close_bottom_bar;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; }
+
+/* line 1, /home/vcap/app/public-site-src/documents/css/_header.scss */
+header {
+  padding: 1.5em;
+  background-color: #323232; }
+  @media (min-width: 45em) {
+    /* line 1, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header {
+      padding-right: 4em;
+      padding-left: 4em; } }
+  @media (min-width: 1140px) {
+    /* line 1, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header {
+      padding: 0 4em; } }
+  /* line 11, /home/vcap/app/public-site-src/documents/css/_header.scss */
+  header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  /* line 16, /home/vcap/app/public-site-src/documents/css/_header.scss */
+  header h1.base--h1 {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 0;
+    margin-top: 0.25em; }
+    @media (min-width: 1140px) {
+      /* line 16, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      header h1.base--h1 {
+        margin-top: 0; } }
+    /* line 24, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header h1.base--h1 a {
+      display: block;
+      text-decoration: none;
+      text-indent: -9999px;
+      background: url("../images/wordmark-white.svg") no-repeat;
+      background-size: 200px auto;
+      min-width: 200px;
+      border-bottom: 0 none; }
+  /* line 34, /home/vcap/app/public-site-src/documents/css/_header.scss */
+  header .main-nav {
+    display: none; }
+    @media (min-width: 1140px) {
+      /* line 34, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      header .main-nav {
+        display: flex; } }
+    /* line 39, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header .main-nav li a {
+      text-decoration: none;
+      color: #fdfdfd;
+      border-bottom: 0 none; }
+      @media (min-width: 45em) {
+        /* line 39, /home/vcap/app/public-site-src/documents/css/_header.scss */
+        header .main-nav li a {
+          padding: 1.5em 1.5em 1.5em 0;
+          display: block; } }
+    /* line 48, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header .main-nav li:last-child a {
+      padding-right: 0; }
+    /* line 51, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header .main-nav a:hover {
+      color: #d7aaff; }
+    /* line 55, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    header .main-nav li.has-dropdown a.active {
+      padding-right: 0;
+      margin-right: 1em; }
+      /* line 58, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      header .main-nav li.has-dropdown a.active span.arrow-bg {
+        display: block;
+        background: url("../images/icons/arrow-down.svg") no-repeat 85% 50%;
+        padding-right: 2em; }
+      /* line 63, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      header .main-nav li.has-dropdown a.active:hover {
+        cursor: default; }
+
+/* line 70, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.mobile-nav {
+  display: block;
+  color: #fdfdfd;
+  cursor: pointer; }
+  @media (min-width: 1140px) {
+    /* line 70, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    .mobile-nav {
+      display: none; } }
+
+/* line 78, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.top-bar .top-bar-menu ul li:hover ul {
+  opacity: 1;
+  visibility: visible; }
+
+/* line 82, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.tob-bar .top-bar-menu ul li:hover a.active {
+  color: #d7aaff; }
+
+@media (min-width: 1140px) {
+  /* line 86, /home/vcap/app/public-site-src/documents/css/_header.scss */
+  li.has-dropdown:hover a.active {
+    color: #d7aaff; } }
+
+/* line 90, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.full-dropdown-cont {
+  opacity: 0;
+  visibility: hidden; }
+  @media (min-width: 1140px) {
+    /* line 90, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    .full-dropdown-cont {
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      top: 72px;
+      text-align: left;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      width: 100%;
+      background: #323232;
+      padding: 1em 4em;
+      z-index: 99;
+      margin: 0; }
+      /* line 106, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont .full-dropdown {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: block; }
+        /* line 13, /home/vcap/app/public-site-src/files/bower_components/sass-toolkit/stylesheets/toolkit/_clearfix.scss */
+        .full-dropdown-cont .full-dropdown:after {
+          content: "";
+          display: table;
+          clear: both; }
+      /* line 112, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont .nav-title {
+        font-size: 1.5em;
+        font-weight: 200;
+        margin-bottom: 1em;
+        display: block;
+        color: #d7aaff; }
+      /* line 119, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont .no-title {
+        margin-top: 46px; }
+      /* line 122, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont .full-dropdown-cat {
+        width: 20%;
+        padding-right: 1.5%;
+        float: left;
+        margin-top: 0rem; }
+      /* line 127, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont .full-dropdown-cat.language-category {
+        width: 40%; }
+      /* line 131, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont .language-category li {
+        float: left;
+        width: 50%;
+        margin-right: 0px; }
+      /* line 136, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont ul li a {
+        color: #fff;
+        padding: 0; }
+      /* line 140, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont ul li a:hover {
+        cursor: pointer;
+        color: #d7aaff;
+        background-color: transparent; }
+      /* line 145, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont li {
+        width: 100%;
+        display: inline-block;
+        margin-right: 2rem;
+        margin-bottom: 1em;
+        padding: 0; }
+      /* line 152, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont li.all-services {
+        max-width: 1400px;
+        margin: 2em auto 1em;
+        display: block; }
+      /* line 157, /home/vcap/app/public-site-src/documents/css/_header.scss */
+      .full-dropdown-cont li.all-services a {
+        width: auto;
+        display: block;
+        font-size: 1rem;
+        padding: 1em 0;
+        color: #fff;
+        line-height: 0.75em;
+        border-top: 1px solid #777677;
+        text-align: right; }
+        /* line 166, /home/vcap/app/public-site-src/documents/css/_header.scss */
+        .full-dropdown-cont li.all-services a:hover {
+          color: #d7aaff; } }
+
+/* line 173, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.has-dropdown a.active {
+  padding-right: 0; }
+  /* line 175, /home/vcap/app/public-site-src/documents/css/_header.scss */
+  .has-dropdown a.active span.arrow-bg {
+    display: block;
+    background: url("../images/arrow-down.svg") no-repeat 85% 50%;
+    padding-right: 2em; }
+  /* line 180, /home/vcap/app/public-site-src/documents/css/_header.scss */
+  .has-dropdown a.active:hover {
+    background-color: #777677, 80;
+    cursor: default; }
+
+/* line 186, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.main-page-container {
+  position: relative;
+  z-index: 1; }
+
+/* line 198, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.tocify-wrapper {
+  padding-top: 4.5rem; }
+
+/* line 201, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.page-wrapper .lang-selector {
+  margin-top: 4.5rem; }
+
+/* line 205, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.api-ref div[data-unique] {
+  display: none; }
+
+/* line 208, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.api-ref header {
+  position: fixed; }
+  @media (min-width: 45em) {
+    /* line 208, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    .api-ref header {
+      padding: 1.5em 1.75em;
+      width: calc(100% - 3.25em); } }
+  @media (min-width: 1140px) {
+    /* line 208, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    .api-ref header {
+      height: 72px;
+      width: calc(100% - 8em); } }
+
+/* line 219, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.api-ref .wrapper {
+  height: 72px; }
+  @media (min-width: 1140px) {
+    /* line 219, /home/vcap/app/public-site-src/documents/css/_header.scss */
+    .api-ref .wrapper {
+      height: 24px; } }
+
+/* line 225, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.api-ref .full-dropdown-cont {
+  width: calc(100% - 8em); }
+
+/* line 228, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.api-ref .full-dropdown-cont .full-dropdown-cat.language-category {
+  width: 37%; }
+
+/* line 231, /home/vcap/app/public-site-src/documents/css/_header.scss */
+.api-ref .full-dropdown-cont .full-dropdown-cat {
+  width: 19%; }
+
+// style overwrite fixes
+
+header {
+  margin-top: 0rem;
+
+  h1.base--h1 a {
+    color: white;
+  }
+
+  .main-nav li {
+    margin-top: 0rem;
+  }
+
+  .top-bar {
+    margin-top: 0rem;
+  }
+
+  @include breakpoint(45em) {
+    padding: 1.5em;
+  }
+
+  @include breakpoint(1024px) {
+    padding: 1.5em;
+  }
+
+  @include breakpoint(1140px) {
+    padding: 0em 4em;
+  }
+}
+
+.drawer {
+  margin-top: 0rem;
+  position: fixed;
+}
+
+.drawer-title .close-drawer {
+  margin-top: 0rem;
+}
+
+.top-bar--spacer {
+  flex-grow: 1;
+}
+
+.mobile-nav {
+  margin-top: 0rem;
+}

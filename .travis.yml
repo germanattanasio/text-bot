@@ -1,0 +1,28 @@
+language: node_js
+sudo: true
+cache:
+  directories:
+  - node_modules
+node_js: 4.4
+script:
+- npm run lint
+- npm test
+env:
+  global:
+  - CF_APP=text-bot
+  - CF_API=https://api.ng.bluemix.net
+  - CF_ORGANIZATION=skitid@us.ibm.com
+  - CF_SPACE=dev
+  matrix:
+    secure: bC2qooAbK8AxpjwDr3p7lefB2p5c2GxUEsW+wEcbr+qtterVlf98V4ElRcmEZS2nEKG8GyNjWmcCQyhXA90XgAEQnwU4pRhDQukdmGA+69ocO0buO0BFalGBWe2hMu5mBFOZCnvCkzmQ735IMtHuG2SWP5ySMo3kAjl4L69zxt8=
+before_deploy: npm install -g cf-blue-green
+deploy:
+  provider: script
+  script:
+  - cf-blue-green-travis
+  on:
+    branch: master
+    repo: watson-developer-cloud/text-bot
+  skip_cleanup: true
+notifications:
+  email: false

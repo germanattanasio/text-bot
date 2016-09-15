@@ -1,0 +1,170 @@
+<html>
+<head>
+  <base href="/">
+  <title>Conversation Chat App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:image" content="conversation.svg" />
+  <meta property="og:title" content="Conversation Chat Simple" />
+  <meta property="og:description" content="Sample application that shows how to use the Conversation API to identify user intents" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+	    <div class="wrapper">
+	      <h1 class="base--h1">
+	      		<a href="/"><img class="base--h1-icon" src="images/watson-avatar-white.png" alt="Watson Avatar">Weather Bot</a>
+	      </h1>
+	      <div class="top-bar--spacer"></div>
+	      <nav class="top-bar homepage" role="navigation">
+	        <div class="top-bar-menu">
+	          <ul class="main-nav">
+	            <li><a href="https://github.com/watson-developer-cloud/text-bot">Fork on GitHub</a></li>
+	            <li><a href="https://developer.ibm.com/watson/">Community</a></li>
+	          </ul>
+	          <ul class="mobile-nav">
+	            <li class="nav-drawer-toggler" onkeyup='ConversationPanel.menuClicked(event)' onclick='ConversationPanel.menuClicked(event)'>Menu</li>
+	          </ul>
+	        </div>
+	      </nav>
+	          <div class="drawer" tabindex="0">
+    	<div class="drawer-container">
+    		<div class="drawer-title">
+    			<h3>Menu</h3>
+    			<a class="close-drawer">
+    				<img src="images/x.svg" />
+    			</a>
+    		</div>
+    		<div>
+    			<ul class="mobile-main-nav">
+    				<li class="has-dropdown"><a href="https://github.com/watson-developer-cloud/text-bot">Fork on GitHub</a></li>
+	            	<li class="has-dropdown"><a href="https://developer.ibm.com/watson/">Community</a></li>
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+
+
+	    </div>
+  	</header>
+
+	<section class="_full-width-row hide" id='loginSection'>
+	    <div class="_container _container_xx-large">
+	      	<div class="_full-width-row--main main-page">
+      			<h2 class="base--h2">What can I call you?</h2>
+	        	<input type="text" id="textInputName" placeholder="Your Name" class="base--input query-input"></input>
+	        	<h2 class="base--h2 h2-margin">Where are you?</h2>
+	        	<input type="text" id="textInputLocation" placeholder="City, zip or place" class="base--input query-input" onkeydown='ConversationPanel.btnClicked(event)'></input>
+
+	        	<div class="row">
+		          	<button class="base--button base--button_icon-hyperlink location">
+		          		<span class="base--button_icon-hyperlink--link location-text" title='Click to get current location'>get my current location</span>
+		          	</button>
+		        </div>
+
+		        <div class="row center-me">
+		          	<button class="base--button base--button_black chat-button" onclick="ConversationPanel.btnClicked(event)">Let's chat</button>
+		        </div>
+	      	</div>
+	    </div>
+ 	</section>
+
+
+ 	<section class="_full-width-row conversationSection" id='conversationSection'>
+	    <div class="">
+	    	<!--<div id="view-change-button" class="button hide" onclick="PayloadPanel.togglePanel(event, this)">
+		    	<img class="option full" src="../images/chat-button.png">
+		    	<img class="option not-full" src="../images/code-button.png">
+		  	</div>-->
+		  	<div id="contentParent" class="responsive-columns-wrapper">
+		    	<div id="chat-column-holder" class="responsive-column content-column">
+			      <div class="chat-column">
+			        <div id="scrollingChat" class='scrollingChat'></div>
+			        <label for="textInputOne" class="inputOutline">
+			          <input id="textInputOne" class="base--input query-input"
+			            placeholder="Start typing..." type="text"
+			            onkeydown="ConversationPanel.inputKeyDown(event, this)">
+			        </label>
+			        <label for="textInput" class="inputOutline hide">
+			          <input id="textInput" class="base--input query-input"
+			            placeholder="Start typing..." type="text"
+			            onkeydown="ConversationPanel.inputKeyDown(event, this)">
+			        </label>
+			      </div>
+		    	</div>
+		    	<div class="fixed-column content-column">
+					<div class='payload-initial-message channel-header hide'>
+						<!--img class="" src="../images/cloudy.svg"-->
+			        	<div>TRY IT OUT IN OTHER CHANNEL</div>
+			        	<ul class="base--ul base--ul_no-bullets highlights">
+						  <li class="base--li">
+							<img class="icons" src="../images/icon-sms.svg">
+							<a href="#" class="base--a hyperlink">xxx-xxx-xxxx</a>
+						  </li>
+						  <br>
+						  <li class="base--li">
+						  <img class="icons" src="../images/icon-fb.svg">
+						  <a href="#" class="base--a hyperlink">https://www.facebook.com/EvaX.Luo</a>
+						  </li>
+			      	</div>
+					<div class='chat-column'>
+				      	<div class='payload-initial-message'>
+				        	TECHNICAL HIGHLIGHTS
+				        	<ul class="base--ul base--ul_no-bullets highlights">
+							  <li class="base--li tech-highlights"><a href="https://github.ibm.com/watson-developer-cloud/text-bot#user-content-intents" class="base--a hyperlink" target="_blank">Best practice on intents naming</a></li>
+							  <li class="base--li tech-highlights"><a href="https://github.ibm.com/watson-developer-cloud/text-bot#user-content-entities" class="base--a hyperlink" target="_blank">Best practice on entity detection</a></li>
+							  <li class="base--li tech-highlights"><a href="https://www.ibm.com/watson/developercloud/doc/conversation/advanced_overview.shtml" class="base--a hyperlink" target="_blank">Best practice on dialog design</a></li>
+							</ul>
+				      	</div>
+				    </div>
+			      <div id="payload-initial-message" class="hide"></div>
+			      <div id="payload-initial-message" class="hide"></div>
+			      <div id="payload-request" class="hide"></div>
+			      <div id="payload-response" class="hide"></div>
+		    	</div>
+		  	</div>
+	    </div>
+	</section>
+
+	<footer class="_full-width-row bottom-nav-bar footer">
+	    <div class="_container _container_xx-large">
+	      <div class="">
+	        <nav class="bottom-nav-bar--nav">
+	          <ul class="bottom-nav-bar--nav-ul base--ul base--ul_inline base--ul_no-bullets">
+	            <li class="bottom-nav-bar--nav-li base--li"><a href="https://www.ibm.com/watson/developercloud/" class="base--a bottom-nav-bar--nav-link" target="_blank">Built with IBM Watson</a></li>
+	            <li class="bottom-nav-bar--nav-li base--li"><a href="http://www.ibm.com/watson/developercloud/conversation.html" class="base--a bottom-nav-bar--nav-link" target="_blank">Conversational API</a></li>
+	          </ul>
+	        </nav>
+	      </div>
+	      <div class="footer-row">
+	        <nav class="bottom-nav-bar--nav">
+	          <ul class="bottom-nav-bar--nav-ul base--ul base--ul_inline base--ul_no-bullets">
+	            <li class="bottom-nav-bar--nav-li base--li"><a href="#" class="base--a bottom-nav-bar--nav-link" target="_blank">ibm.com</a></li>
+	            <li class="bottom-nav-bar--nav-li base--li"><a href="#" class="base--a bottom-nav-bar--nav-link" target="_blank">Terms of Use</a></li>
+	            <li class="bottom-nav-bar--nav-li base--li"><a href="#" class="base--a bottom-nav-bar--nav-link" target="_blank">Privacy Policy</a></li>
+	            <li class="bottom-nav-bar--nav-li base--li">&copy 2016 IBM</li>
+	          </ul>
+	        </nav>
+	      </div>
+	    </div>
+  	</footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/payload.js"></script>
+  <script src="js/global.js"></script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-59827755-20', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

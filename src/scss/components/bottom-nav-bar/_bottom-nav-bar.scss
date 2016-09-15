@@ -1,0 +1,28 @@
+.bottom-nav-bar {
+  padding: get('rhythm') 0rem;
+
+  ._full-width-row--aside {
+    display: block;
+
+    @include breakpoint($breakpoint-nav-items) {
+      display: inline-block;
+    }
+  }
+  ._full-width-row--main {
+    display: block;
+    @include breakpoint($breakpoint-nav-items) {
+      display: inline-block;
+    }
+  }
+
+  &--nav-ul.base--ul_inline .bottom-nav-bar--nav-li {
+    display: block;
+    margin-bottom: get('rhythm') / 8;
+
+    @include breakpoint($breakpoint-nav-items) {
+      margin-right: get('rhythm') / 2;
+      margin-bottom: 0rem;
+      display: inline-block;
+    }
+  }
+}

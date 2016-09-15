@@ -1,0 +1,31 @@
+.header {
+  margin-top: 0rem;
+
+  &--icon {
+    width: 8rem;
+
+    @include breakpoint(get('large')) {
+      min-width: 6rem;
+      width: 80%;
+    }
+  }
+
+  &--icon-image {
+    width: 100%;
+  }
+
+  &--header {
+    line-height: 1;
+  }
+
+  &--nav-ul.base--ul_inline .header--nav-li {
+    display: block;
+    margin-bottom: get('rhythm') / 8;
+
+    @include breakpoint($breakpoint-nav-items) {
+      margin-right: get('rhythm') / 2;
+      margin-bottom: 0rem;
+      display: inline-block;
+    }
+  }
+}
