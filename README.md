@@ -25,7 +25,7 @@ A running instance of the application in this Starter Kit is available as a [dem
 
 This application is written in [Node.js](http://nodejs.org/) and uses the [npm](https://www.npmjs.com/), the Node Package Manager, command to install a software development kit (SDK) for the Watson Developer Cloud services, as well as to satisfy other dependencies. The following instructions include Instructions for downloading and installing these.
 
-1. Log into GitHub and clone [the repository for this application](https://github.ibm.com/watson-developer-cloud/text-bot). Change to the folder that contains your clone of this repository.
+1. Log into GitHub and clone [the repository for this application](https://github.com/watson-developer-cloud/text-bot). Change to the folder that contains your clone of this repository.
 
 2. [Create a Bluemix Account](sign_up) if you do not already have one, or use an existing account.
 
