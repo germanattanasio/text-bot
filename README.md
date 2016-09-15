@@ -1,4 +1,9 @@
-# Text Bot [![Build Status](https://travis.innovate.ibm.com/watson-developer-cloud/text-bot.svg?token=ouxuNEZVg24FqsCxcPYL)](https://travis.innovate.ibm.com/watson-developer-cloud/text-bot)
+# Text Bot [![Build Status](https://travis-ci.org/watson-developer-cloud/text-bot.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/text-bot)
+
+
+<p align="center">
+  <img src="http://g.recordit.co/mfjBM2ZJEn.gif" alt="demo" />
+</p>
 
 ## Installation
 
