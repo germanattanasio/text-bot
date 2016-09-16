@@ -14,7 +14,7 @@ env:
   - CF_ORGANIZATION=skitid@us.ibm.com
   - CF_SPACE=dev
   matrix:
-    secure: bC2qooAbK8AxpjwDr3p7lefB2p5c2GxUEsW+wEcbr+qtterVlf98V4ElRcmEZS2nEKG8GyNjWmcCQyhXA90XgAEQnwU4pRhDQukdmGA+69ocO0buO0BFalGBWe2hMu5mBFOZCnvCkzmQ735IMtHuG2SWP5ySMo3kAjl4L69zxt8=
+    secure: BSXiEZSVKH9pUCK37gh4ARcfh63nF2zfpz/E/R3wMMzQcQ/WC+jWHk8GC3wwN+inqmmN393d4OHVFMZt/Bxb7omgn09p6ouLumGyfuKrRJfzT3QQ6eHK2fEqd7/7/l8d+H4wzzr9RNFwdZWV57v1zH/CHPLUda2QMKWWMwsEU9Q=
 before_deploy: npm install -g cf-blue-green
 deploy:
   provider: script
