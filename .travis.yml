@@ -8,7 +8,7 @@ script:
 - npm run lint
 - npm test
 before_install:
-- openssl aes-256-cbc -K $encrypted_a54f2f7dd08e_key -iv $encrypted_a54f2f7dd08e_iv
+- openssl aes-256-cbc -K $encrypted_f9d49e660b56_key -iv $encrypted_f9d49e660b56_iv
   -in .env.enc -out .env -d
 env:
   global:
