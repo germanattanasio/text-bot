@@ -249,6 +249,10 @@ $color-fixed-column: #855ca7;
 	margin-top: 1.5rem;
 }
 
+.special {
+	margin-top: 0.5rem;
+}
+
 .hyperlink {
 	color: inherit !important;
     border-bottom: 0.0625rem solid !important;
@@ -325,6 +329,7 @@ input[type=text]:focus {
   font-size: 0.8rem;
   letter-spacing: 0.01875rem;
   padding-left: 3rem;
+  padding-right: 3rem;
   padding-top: 3rem;
   margin-top: 0;
 }
