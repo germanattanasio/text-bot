@@ -63,7 +63,7 @@ casper.thenOpen('http://localhost:3000', function (result) {
 
    //Check for Response
    casper.then(function(){
-    casper.test.assertSelectorHasText('p', 'The weather for Austin ');
+    casper.test.assertSelectorHasText('p', 'weather for Austin ');
    });
 
 }, null, 3 * 60 * 1000);
