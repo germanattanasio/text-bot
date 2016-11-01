@@ -7,7 +7,7 @@ declared-services:
     plan: Free-v2
   cloudantNoSQLDB-service:
     label: cloudantNoSQLDB
-    plan: Shared
+    plan: Lite
 applications:
 - services:
    - conversation-service
