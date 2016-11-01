@@ -44,7 +44,7 @@ This application is written in [Node.js](http://nodejs.org/) and uses the [npm](
           plan: Free-v2
         cloudantNoSQLDB-service:
           label: cloudantNoSQLDB
-          plan: Shared
+          plan: Lite
         applications:
           - services:
             - conversation-service
@@ -80,9 +80,7 @@ This application is written in [Node.js](http://nodejs.org/) and uses the [npm](
 
     - Create an instance of the [Cloudant NoSQL database](cloudantNoSQLDB) service by running the following command:
 
-        cf create-service cloudantNoSQLDB Shared cloudantNoSQLDB-service
-
-    You will see a message which warns you that the **Shared** plan for the Cloudant NoSQLDB service is not free.
+        cf create-service cloudantNoSQLDB Lite cloudantNoSQLDB-service
 
 8. Create and retrieve service keys to access the Conversation service:
 
@@ -112,22 +110,43 @@ This application is written in [Node.js](http://nodejs.org/) and uses the [npm](
 
     The `.env` file will look something like the following:
 
-        USE_WEBUI=true
-        ALCHEMY_API_KEY=
+      USE_WEBUI=true
+      ALCHEMY_API_KEY=
 
-        #CONVERSATION
-        CONVERSATION_URL=https://gateway.watsonplatform.net/conversation/api
-        CONVERSATION_USERNAME=
-        CONVERSATION_PASSWORD=
-        WORKSPACE_ID=
+      #CONVERSATION
+      CONVERSATION_URL=https://gateway.watsonplatform.net/conversation/api
+      CONVERSATION_USERNAME=
+      CONVERSATION_PASSWORD=
+      WORKSPACE_ID=
 
-        #WEATHER
-        WEATHER_URL=
-        WEATHER_USERNAME=
-        WEATHER_PASSWORD=
+      #WEATHER
+      WEATHER_URL=https://twcservice.mybluemix.net/api/weather
+      WEATHER_USERNAME=
+      WEATHER_PASSWORD=
 
-        #CLOUDANT
-        CLOUDANT_URL=
+
+      #CLOUDANT
+      CLOUDANT_URL=
+
+      #FACEBOOK
+      USE_FACEBOOK=false
+      FACEBOOK_ACCESS_TOKEN=
+      FACEBOOK_VERIFY_TOKEN=
+
+      #TWILIO
+      USE_TWILIO=false
+      USE_TWILIO_SMS=false
+      TWILIO_ACCOUNT_SID=
+      TWILIO_AUTH_TOKEN=
+      TWILIO_API_KEY=
+      TWILIO_API_SECRET=
+      TWILIO_IPM_SERVICE_SID=
+      TWILIO_NUMBER=
+
+
+    # Logging
+    DEBUG=bot*,-bot:api:*,-bot:channel:*
+
 
 
 13. The Conversation service must be trained before you can successfully use this application. The training data is provided in the file `resources/conversation-training-data.json` in your checkout of the repository. To train the model used by the Conversation service for this SK, do the following:
@@ -187,7 +206,7 @@ First, make sure that you followed steps 1 through 11 in the [Getting Started](#
 
     **Note** If you run into problems during installation, you might want to update your node version. Get version 4.4.7 or above.
 
-4. Open `http://localhost:5000` to see the running application.
+4. Open `http://localhost:3000` to see the running application.
 
 ## Adapting/Extending the Starter Kit
 
