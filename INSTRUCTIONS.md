@@ -151,7 +151,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
     
     6. Click **Choose a file**, navigate to the `resources` directory of your clone of the repository for this project, and select the file `conversation-training-data.json`.  Once the file is selected, ensure that the “Everything (Intents, Entities, and Dialog” option is selected.
     
-    7. Click **Import** to upload the `.json` file, create a workspace, and train the model used by the Conversation service.
+    7. Click **Import** to upload the `.json` file to create a workspace and train the model used by the Conversation service.
 
     To find your workspace ID once training has completed, click the three vertical dots in the upper right-hand corner of the Workspace pane, and select **View details**.  Once the upload is complete, you will see a new workspace called “Weather Bot ASK”. In order to connect this workspace to our application, we will need to include the Workspace ID in our environment variables file “.env”.  
 
