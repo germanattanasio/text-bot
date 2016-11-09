@@ -58,7 +58,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
   ```none
   cf api https://api.ng.bluemix.net
-  cf login -u <your-Bluemix-ID> -p <your-Bluemix-password>
+  cf login
   ```
 
 1. Create and retrieve service keys to access the [Conversation](http://www.ibm.com/watson/developercloud/doc/conversation/) service by running the following command:
