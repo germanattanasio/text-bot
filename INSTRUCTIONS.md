@@ -29,7 +29,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 1. [Sign up][sign_up] in Bluemix or use an existing account.
 1. If it is not already installed on your system, download and install the [Cloud-foundry CLI][cloud_foundry] tool.
-1. Edit the `manifest.yml` file in the folder that contains your code and replace `weather-conversation-bot` with a unique name for your application. The name that you specify determines the application's URL, such as `application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
+1. Edit the `manifest.yml` file in the folder that contains your code and replace `text-bot` with a unique name for your application. The name that you specify determines the application's URL, such as `your-application-name.mybluemix.net`. The relevant portion of the `manifest.yml` file looks like the following:
 
     ```yml
     declared-services:
@@ -47,7 +47,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
         - conversation-service
         - weatherinsights-service
         - cloudantNoSQLDB-service
-      name: weather-conversation-bot
+      name: text-bot
       command: npm start
       path: .
       memory: 512M
