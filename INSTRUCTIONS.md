@@ -93,7 +93,27 @@ So let’s get started. The first thing to do is to build out the shell of our a
   cf service-key cloudantNoSQLDB-service myKey
   ```
 
-17. Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command:
+1. The Conversation service must be trained before you can successfully use this application. The training data is provided in the file `resources/conversation-training-data.json`. To train the model used by the Conversation service, do the following:
+
+    1. Login to Bluemix
+
+    2. Navigate to upper left hand side and click on the 3 parallel lines and select **Dashboard** from the left hand navigation panel.
+
+    3. Scroll down and under "All Services" - select the instance of the Conversation service that you are using
+
+    4. Once on the Service details page, scroll down (if necessary) and click green **Launch tool** button on the right hand side of the page. (You may be asked to log in again. or you may see a blank screen - give it a few minutes and refresh the screen). This will launch the tooling for the Conversation service, which allows you to build dialog flows and train your chatbot. This should take you to your workspace in the Conversation service which represents a unique set of chat flows and training examples. This allows you to have multiple chatbots within a single instance of the Conversation service. 
+
+    5. Once on the page, you will see the option to either “Create” a new workspace, or “import” an existing one. We are going to “import” a premade chatbot for this example, so select “Import".
+    
+    6. Click **Choose a file**, navigate to the `resources` directory of your clone of the repository for this project, and select the file `conversation-training-data.json`.  Once the file is selected, ensure that the “Everything (Intents, Entities, and Dialog” option is selected.
+    
+    7. Click **Import** to upload the `.json` file to create a workspace and train the model used by the Conversation service.
+
+    To find your workspace ID once training has completed, click the three vertical dots in the upper right-hand corner of the Workspace pane, and select **View details**.  Once the upload is complete, you will see a new workspace called “Weather Bot ASK”. In order to connect this workspace to our application, we will need to include the Workspace ID in our environment variables file “.env”.  
+
+    Go back into your “.env” file, and paste the workspace ID next to the “WORKSPACE_ID=” entry.
+
+1. Create a `.env` file in the root directory of your clone of the project repository by copying the sample `.env.example` file using the following command:
   
   ```none
   cp .env.example .env
@@ -137,26 +157,6 @@ So let’s get started. The first thing to do is to build out the shell of our a
     TWILIO_IPM_SERVICE_SID=
     TWILIO_NUMBER=
     ```
-
-1. The Conversation service must be trained before you can successfully use this application. The training data is provided in the file `resources/conversation-training-data.json`. To train the model used by the Conversation service, do the following:
-
-    1. Login to Bluemix
-
-    2. Navigate to upper left hand side and click on the 3 parallel lines and select **Dashboard** from the left hand navigation panel.
-
-    3. Scroll down and under "All Services" - select the instance of the Conversation service that you are using
-
-    4. Once on the Service details page, scroll down (if necessary) and click green **Launch tool** button on the right hand side of the page. (You may be asked to log in again. or you may see a blank screen - give it a few minutes and refresh the screen). This will launch the tooling for the Conversation service, which allows you to build dialog flows and train your chatbot. This should take you to your workspace in the Conversation service which represents a unique set of chat flows and training examples. This allows you to have multiple chatbots within a single instance of the Conversation service. 
-
-    5. Once on the page, you will see the option to either “Create” a new workspace, or “import” an existing one. We are going to “import” a premade chatbot for this example, so select “Import".
-    
-    6. Click **Choose a file**, navigate to the `resources` directory of your clone of the repository for this project, and select the file `conversation-training-data.json`.  Once the file is selected, ensure that the “Everything (Intents, Entities, and Dialog” option is selected.
-    
-    7. Click **Import** to upload the `.json` file to create a workspace and train the model used by the Conversation service.
-
-    To find your workspace ID once training has completed, click the three vertical dots in the upper right-hand corner of the Workspace pane, and select **View details**.  Once the upload is complete, you will see a new workspace called “Weather Bot ASK”. In order to connect this workspace to our application, we will need to include the Workspace ID in our environment variables file “.env”.  
-
-    Go back into your “.env” file, and paste the workspace ID next to the “WORKSPACE_ID=” entry.
 
 
 1. Install the dependencies you application need:
