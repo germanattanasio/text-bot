@@ -2,18 +2,14 @@ declared-services:
   conversation-service:
     label: conversation
     plan: free
-  weatherinsights-service:
-    label: weatherinsights
-    plan: Free-v2
   cloudantNoSQLDB-service:
     label: cloudantNoSQLDB
     plan: Lite
 applications:
 - services:
    - conversation-service
-   - weatherinsights-service
-   - cloudantNoSQLDB-service
-  name: text-bot
+   - Cloudant NoSQL DB-xr
+  name: text-bot-lab
   command: npm start
   path: .
   memory: 512M
