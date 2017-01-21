@@ -8,8 +8,8 @@ declared-services:
 applications:
 - services:
    - conversation-service
-   - Cloudant NoSQL DB-xr
-  name: text-bot-lab
+   - cloudantNoSQLDB-service
+  name: text-bot
   command: npm start
   path: .
   memory: 512M
