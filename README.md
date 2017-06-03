@@ -80,12 +80,12 @@ A running instance of the application in this Starter Kit is available as a [dem
   cf service-key conversation-service myKey
   ```
 
-1. Create and retrieve an API key to access the [Alchemy Language](http://www.ibm.com/watson/developercloud/alchemy-language.html) service (if you already have instance skip this step) by running the following command:
+1. Create and retrieve an API key to access the [Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding.html) service (if you already have instance skip this step) by running the following command:
 
   ```none
-  cf create-service alchemy_api free alchemy-language-service
-  cf create-service-key alchemy-language-service myKey
-  cf service-key alchemy-language-service myKey
+  cf create-service Natural-Language-Understanding free Natural-Language-Understanding-service
+  cf create-service-key Natural-Language-Understanding-service myKey
+  cf service-key Natural-Language-Understanding-service myKey
   ```
 
 1. Create and retrieve service keys to access the [Weather Insights service](https://console.ng.bluemix.net/docs/services/InsightsWeather/index.html) by running the following command:
@@ -138,7 +138,8 @@ A running instance of the application in this Starter Kit is available as a [dem
 
     ```none
     USE_WEBUI=true
-    ALCHEMY_API_KEY=
+    NATURAL_LANGUAGE_UNDERSTANDING_USERNAME=
+    NATURAL_LANGUAGE_UNDERSTANDING_PASSWORD=
 
     #CONVERSATION
     CONVERSATION_URL=https://gateway.watsonplatform.net/conversation/api
@@ -245,7 +246,7 @@ This Starter Kit uses  weather data from the WeatherInsights service and can eas
 
 
 ## Reference information
-The following links provide more information about the Conversation, WeatherInsights, and Alchemy Language services.
+The following links provide more information about the Conversation, WeatherInsights, and Natural Language Understanding services.
 
 ### Conversation service
   * [API documentation](http://www.ibm.com/watson/developercloud/doc/conversation/): Get an in-depth knowledge of the Conversation service
@@ -258,9 +259,10 @@ The following links provide more information about the Conversation, WeatherInsi
   * [API reference](https://console.ng.bluemix.net/docs/services/Weather/weather_tutorials_samples.html#tutorials_samples): Code examples and reference
   * [API Explorer](https://console.ng.bluemix.net/docs/services/Weather/weather_rest_apis.html#rest_apis): Try out the REST API
 
-### Alchemy Language
-  * [API documentation](http://www.alchemyapi.com/api): Get an in-depth understanding of the AlchemyAPI services
-  * [AlchemyData News reference](http://docs.alchemyapi.com/): API and query gallery
+### Natural Language Understanding
+  * [API documentation](https://www.ibm.com/watson/developercloud/doc/natural-language-understanding/): Get an in-depth understanding of the NLU services
+  * [API reference](https://www.ibm.com/watson/developercloud/natural-language-understanding/api/v1/): Code examples and reference
+  * [API Explorer](https://watson-api-explorer.mybluemix.net/apis/natural-language-understanding-v1): Try out the API
 
 ### Cloudant service
   * [API documentation](https://console.ng.bluemix.net/docs/services/Cloudant/index.html#Cloudant): Get an in-depth understanding of the Cloudant services
@@ -281,7 +283,7 @@ Most of the best practices associated with writing a conversational application 
 ### Entities
   * Use entities from within the conversation tooling when dealing with a concise and well-defined set of entities (Example : days of the week). Refer to [Entities](https://www.ibm.com/watson/developercloud/doc/conversation/entity_ovw.shtml) section within the Watson Conversation Service documentation.
   * Use synonyms to capture variations of the entity. This may include acronyms, abbreviations, multi-word variations.
-  * Use Alchemy Entity Extraction API to provide a more open set of entities (Examples : City names). For a more advanced cases or special domains, it may be necessary to create a custom model which is beyond the scope of this starter kit.
+  * Use Natural Language Understanding Entity Extraction API to provide a more open set of entities (Examples : City names). For a more advanced cases or special domains, it may be necessary to create a custom model which is beyond the scope of this starter kit.
 
 ### Dialog
   * Use context variables to maintain state or pass information between your bot and the application. Refer to [Context variables](https://www.ibm.com/watson/developercloud/doc/conversation/advanced_overview.shtml#advanced_context) section within the Watson Conversation Service Documentation.
@@ -332,15 +334,15 @@ Deployment tracking can be disabled by removing `require('cf-deployment-tracker-
 
 
 [wdc_services]: http://www.ibm.com/watson/developercloud/services-catalog.html
-[alchemy_language]: http://www.ibm.com/watson/developercloud/doc/alchemylanguage
+[natural_language_understanding]: https://www.ibm.com/watson/developercloud/natural-language-understanding.html
 [cloud_foundry]: https://github.com/cloudfoundry/cli
 
 [deploy_track_url]: https://github.com/cloudant-labs/deployment-tracker
 [cloud_foundry]: https://github.com/cloudfoundry/cli
 [sign_up]: https://console.ng.bluemix.net/registration/
-[get-alchemyapi-key]: https://console.ng.bluemix.net/catalog/services/alchemyapi/
+[get-natural-language-understanding-key]: https://console.ng.bluemix.net/catalog/services/natural-language-understanding
 
 [conversation]: http://www.ibm.com/watson/developercloud/doc/conversation/
-[alchemy-language]: http://www.ibm.com/watson/developercloud/alchemy-language.html
+[natural-language-understanding]: https://www.ibm.com/watson/developercloud/natural-language-understanding.html
 [weatherinsights]: https://bluemix.net/catalog/weatherinsights
 [cloudantNoSQLDB]: https://console.ng.bluemix.net/docs/services/Cloudant/index.html#Cloudant
