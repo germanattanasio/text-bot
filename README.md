@@ -191,8 +191,8 @@ npm start
 
 1. Edit the `.env` file to add credentials for Facebook and Twilio. See the following links for information about where you can get the credentials required by the botkit for each service:
 
-    * [Facebook](https://github.com/howdyai/botkit/blob/master/readme-facebook.md#getting-started)
-    * [Twilio](https://github.com/howdyai/botkit/blob/master/readme-twilioipm.md#getting-started)
+    * [Facebook](https://github.com/howdyai/botkit/blob/master/docs/readme-facebook.md#getting-started)
+    * [Twilio](https://github.com/howdyai/botkit/blob/master/docs/readme-twiliosms.md#getting-started)
 
 2. If you are integrating with Twilio, set the `USE_TWILIO` and `USE_TWILIO_SMS` variables in your `.env` file to `true`. If you are integrating with Facebook, set the `USE_FACEBOOK` variable in your `.env` file to `true`.
 
